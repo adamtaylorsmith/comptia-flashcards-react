@@ -1,7 +1,7 @@
 import React from 'react'
 import Flashcard from '../Flashcard'
 
-export default function LessonTwelve({flashcards}) {
+export default function LessonFourteen({flashcards}) {
   return (
     <div className='card-grid'>
         {flashcards.map(flashcard => {
