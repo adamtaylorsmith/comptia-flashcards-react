@@ -116,14 +116,17 @@ function App() {
 
   return (
     <>
-      <div className='flex justify-center text-2xl font-bold mt-12'>
-      Flashcards for CompTIA Exams Network+ and Security+
+      <div className='flex justify-center text-3xl font-bold mt-12'>
+      CompTIA Network+ &#38; Security+
       </div>
-      <div className='flex justify-center text-xl mt-6'>
+      <div className='flex justify-center text-3xl font-bold mt-2'>
+      Exam Prep Flashcards
+      </div>
+      <div className='flex justify-center text-lg mt-12'>
         Choose:
       </div>
 
-      <div className='flex justify-around mt-6'>
+      <div className='flex justify-around mt-3'>
 
         <div onClick={() => networkPlus()} className='flex-col border-solid border-2 border-black  rounded-lg hover:border-white hover:shadow-2xl lg:ml-28 xl:ml-56' style={ networkTrigger % 2 !== 0  ? {'backgroundColor': 'darkGray'} : {'backgroundColor': 'white'} }>
           <div className='p-8'>
