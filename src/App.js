@@ -51,6 +51,7 @@ function App() {
   const [netFlashcards, setNetFlashcards] = useState('')
 
   const myComponents = {
+    'empty': '',
     'one': <LessonOne flashcards={one} />,
     'two': <LessonTwo flashcards={two} />,
     'three': <LessonThree flashcards={three} />,
@@ -74,6 +75,7 @@ function App() {
     'twentyone': <LessonTwentyOne flashcards={twentyone} />,
   }
   const myNetComponents = {
+    'empty': '',
     'ports': <Ports flashcards={ports} />,
     'one_net': <LessonOneX flashcards={net_one} />,
     'two_net': <LessonTwoX flashcards={net_two} />,
@@ -99,21 +101,38 @@ function App() {
   const touchdown = () => {
     alert('hi')
   }
+  const [networkTrigger, setNetworkTrigger] = useState(0)
+  const networkPlus = () => {
+    setNetworkTrigger(networkTrigger + 1)
+  }
+  const [securityTrigger, setSecurityTrigger] = useState(0)
+  const securityPlus = () => {
+    setSecurityTrigger(securityTrigger + 1)
+  }
+
+  const newFunc = () => {
+    console.log('hi')
+  }
 
   return (
     <>
+      <div className='flex justify-center text-2xl font-bold mt-12'>
+      Flashcards for CompTIA Exams Network+ and Security+
+      </div>
+      <div className='flex justify-center text-xl mt-6'>
+        Choose:
+      </div>
 
-      <div className='flex justify-around mt-12'>
+      <div className='flex justify-around mt-6'>
 
-        <div onClick={() => touchdown()} className='flex-col border-solid border-2 border-black bg-white rounded-lg hover:border-white hover:shadow-2xl'>
+        <div onClick={() => networkPlus()} className='flex-col border-solid border-2 border-black  rounded-lg hover:border-white hover:shadow-2xl lg:ml-28 xl:ml-56' style={ networkTrigger % 2 !== 0  ? {'backgroundColor': 'darkGray'} : {'backgroundColor': 'white'} }>
           <div className='p-8'>
             <div className='font-bold text-xl'>Network+ N10-008</div>
-            <div className='text-lg mb-2 ml-3'>launched Sept 2021</div>
+            <div className='text-lg mb-4 ml-3'>launched Sept 2021</div>
             <div><img src={NetworkImage} alt="Network+ 008" className='w-32 ml-7' /></div>
           </div> 
         </div>
-
-        <div className='flex-col border-solid border-2 border-black bg-white rounded-lg'>
+        <div onClick={() => securityPlus()} className='flex-col border-solid border-2 border-black  rounded-lg hover:border-white hover:shadow-2xl lg:mr-28 xl:mr-56' style={ securityTrigger % 2 !== 0  ? {'backgroundColor': 'darkGray', 'color': 'white'} : {'backgroundColor': 'white', 'color': 'black'} }>
           <div className='p-8'>
             <div className='font-bold text-xl'>Security+ SY0-601</div>
             <div className='text-lg mb-2 ml-3'>launched Nov 2020</div>
@@ -122,60 +141,88 @@ function App() {
         </div>
 
       </div>
+      
+      {
+      securityTrigger % 2 !== 0 
+      ? 
+      <>
+        <form className='flex justify-center mt-6'>
+          <select className='text-lg' onChange={(e) => setFlashcards(e.target.value)}>
+            <option>Select Security+ Lesson to Review</option>
+            {/* <option value="ports">Ports</option> */}
+            <option value="one">Lesson 1 - Comparing Security Roles and Security Controls</option>
+            <option value="two">Lesson 2 - Explaining Threat Actors and Threat Intelligence</option>
+            <option value="three">Lesson 3 - Performing Security Assessments</option>
+            <option value="four">Lesson 4 - Identifying Social Engineering and Malware</option>
+            <option value="five">Lesson 5 - Summarizing Basic Cryptographic Concepts</option>
+            <option value="six">Lesson 6 - Implementing Public Key Infrastructure</option>
+            <option value="seven">Lesson 7 - Implementing Authentication Controls</option>
+            <option value="eight">Lesson 8 - Implementing Identity and Account Management Controls</option>
+            <option value="nine">Lesson 9 - Implementing Secure Network Designs</option>
+            <option value="ten">Lesson 10 - Implementing Network Security Appliances</option>
+            <option value="eleven">Lesson 11 - Implementing Secure Network Protocols</option>
+            <option value="twelve">Lesson 12 - Implementing Host Security Solutions</option>
+            <option value="thirteen">Lesson 13 - Implementing Secure Mobile Solutions</option>
+            <option value="fourteen">Lesson 14 - Implementing Secure Application Concepts</option>
+            <option value="fifteen">Lesson 15 - Implementing Secure Cloud Solutions</option>
+            <option value="sixteen">Lesson 16 - Explaining Data Privacy and Protection Concepts</option>
+            <option value="seventeen">Lesson 17 - Performing Incident Response</option>
+            <option value="eighteen">Lesson 18 - Explaining Digital Forensics</option>
+            <option value="nineteen">Lesson 19 - Summarizing Risk Management Concepts</option>
+            <option value="twenty">Lesson 20 - Implementing Cybersecurity Resilience</option>
+            <option value="twentyone">Lesson 21 - Explaining Physical Security</option>
+          </select>
+        </form> 
+        {myComponents[flashcards]}
+      </>
+      : 
+        // {myComponents('empty')}
+        newFunc()
+        // ''
+      }
 
-      <form className='flex justify-center mt-6'>
-        <select className='text-lg' onChange={(e) => setFlashcards(e.target.value)}>
-          <option>Select Security+ Lesson to Review</option>
-          {/* <option value="ports">Ports</option> */}
-          <option value="one">Lesson 1 - Comparing Security Roles and Security Controls</option>
-          <option value="two">Lesson 2 - Explaining Threat Actors and Threat Intelligence</option>
-          <option value="three">Lesson 3 - Performing Security Assessments</option>
-          <option value="four">Lesson 4 - Identifying Social Engineering and Malware</option>
-          <option value="five">Lesson 5 - Summarizing Basic Cryptographic Concepts</option>
-          <option value="six">Lesson 6 - Implementing Public Key Infrastructure</option>
-          <option value="seven">Lesson 7 - Implementing Authentication Controls</option>
-          <option value="eight">Lesson 8 - Implementing Identity and Account Management Controls</option>
-          <option value="nine">Lesson 9 - Implementing Secure Network Designs</option>
-          <option value="ten">Lesson 10 - Implementing Network Security Appliances</option>
-          <option value="eleven">Lesson 11 - Implementing Secure Network Protocols</option>
-          <option value="twelve">Lesson 12 - Implementing Host Security Solutions</option>
-          <option value="thirteen">Lesson 13 - Implementing Secure Mobile Solutions</option>
-          <option value="fourteen">Lesson 14 - Implementing Secure Application Concepts</option>
-          <option value="fifteen">Lesson 15 - Implementing Secure Cloud Solutions</option>
-          <option value="sixteen">Lesson 16 - Explaining Data Privacy and Protection Concepts</option>
-          <option value="seventeen">Lesson 17 - Performing Incident Response</option>
-          <option value="eighteen">Lesson 18 - Explaining Digital Forensics</option>
-          <option value="nineteen">Lesson 19 - Summarizing Risk Management Concepts</option>
-          <option value="twenty">Lesson 20 - Implementing Cybersecurity Resilience</option>
-          <option value="twentyone">Lesson 21 - Explaining Physical Security</option>
-        </select>
-      </form>
-      <form className='flex justify-center my-6'>
-        <select className='text-lg' onChange={(e) => setNetFlashcards(e.target.value)}>
-          <option>Select Network+ Lesson to Review</option>
-          <option value="ports">Ports</option>
-          <option value="one_net">Lesson 1 - OSI Model</option>
-          <option value="two_net">Lesson 2 - Ethernet Cabling</option>
-          <option value="three_net">Lesson 3 - Ethernet Switching</option>
-          <option value="four_net">Lesson 4 - Troubleshooting Ethernet Networks</option>
-          <option value="five_net">Lesson 5 - IPv4 Addressing</option>
-          <option value="six_net">Lesson 6 - IPv4 and IPv6 Networks</option>
-          <option value="seven_net">Lesson 7 - Routers</option>
-          <option value="eight_net">Lesson 8 - Network Topologies</option>
-          <option value="nine_net">Lesson 9 - Transport Layer</option>
-          <option value="ten_net">Lesson 10 - Explaining Network Services</option>
-          <option value="eleven_net">Lesson 11 - Network Applications</option>
-          <option value="twelve_net">Lesson 12 - Network Availability</option>
-          <option value="thirteen_net">Lesson 13 - Common Security Concepts</option>
-        </select>
-      </form>
-      <hr/>
-      {myComponents[flashcards]}
-      {myNetComponents[netFlashcards]}
+      {
+      networkTrigger % 2 !== 0
+      ? 
+      <>
+        <form className='flex justify-center my-6'>
+          <select className='text-lg' onChange={(e) => setNetFlashcards(e.target.value)}>
+            <option>Select Network+ Lesson to Review</option>
+            <option value="ports">Ports</option>
+            <option value="one_net">Lesson 1 - OSI Model</option>
+            <option value="two_net">Lesson 2 - Ethernet Cabling</option>
+            <option value="three_net">Lesson 3 - Ethernet Switching</option>
+            <option value="four_net">Lesson 4 - Troubleshooting Ethernet Networks</option>
+            <option value="five_net">Lesson 5 - IPv4 Addressing</option>
+            <option value="six_net">Lesson 6 - IPv4 and IPv6 Networks</option>
+            <option value="seven_net">Lesson 7 - Routers</option>
+            <option value="eight_net">Lesson 8 - Network Topologies</option>
+            <option value="nine_net">Lesson 9 - Transport Layer</option>
+            <option value="ten_net">Lesson 10 - Explaining Network Services</option>
+            <option value="eleven_net">Lesson 11 - Network Applications</option>
+            <option value="twelve_net">Lesson 12 - Network Availability</option>
+            <option value="thirteen_net">Lesson 13 - Common Security Concepts</option>
+          </select>
+        </form>
+        {myNetComponents[netFlashcards]}
+      </>
+      : 
+      ''
+      }
+      
+      
+      
+
+      <div className='text-sm flex justify-center mt-16'>
+        2022 React App by Adam Taylor Smith
+      </div>
     </>
   );
 }
 
+const empty = [
+  // '':'',
+]
 const one = [
   {
     id: 1.00,
