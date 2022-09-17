@@ -128,17 +128,17 @@ function App() {
 
       <div className='flex justify-around mt-3'>
 
-        <div onClick={() => networkPlus()} className='flex-col border-solid border-2 border-black  rounded-lg hover:border-white hover:shadow-2xl lg:ml-28 xl:ml-56' style={ networkTrigger % 2 !== 0  ? {'backgroundColor': 'darkGray'} : {'backgroundColor': 'white'} }>
+        <div onClick={() => networkPlus()} className='flex-col border-solid border-2 border-black  rounded-lg hover:border-white hover:shadow-2xl lg:ml-28 xl:ml-56' style={ networkTrigger % 2 !== 0  ? {'backgroundColor': '#1e1e1e', 'color': '#faf7f7'} : {'backgroundColor': 'white'} }>
           <div className='p-8'>
             <div className='font-bold text-xl'>Network+ N10-008</div>
-            <div className='text-lg mb-4 ml-3'>launched Sept 2021</div>
+            <div className='text-md mb-4 ml-3'>launched Sept 2021</div>
             <div><img src={NetworkImage} alt="Network+ 008" className='w-32 ml-7' /></div>
           </div> 
         </div>
-        <div onClick={() => securityPlus()} className='flex-col border-solid border-2 border-black  rounded-lg hover:border-white hover:shadow-2xl lg:mr-28 xl:mr-56' style={ securityTrigger % 2 !== 0  ? {'backgroundColor': 'darkGray', 'color': 'white'} : {'backgroundColor': 'white', 'color': 'black'} }>
+        <div onClick={() => securityPlus()} className='flex-col border-solid border-2 border-black  rounded-lg hover:border-white hover:shadow-2xl lg:mr-28 xl:mr-56' style={ securityTrigger % 2 !== 0  ? {'backgroundColor': '#1e1e1e', 'color': '#faf7f7'} : {'backgroundColor': 'white', 'color': 'black'} }>
           <div className='p-8'>
             <div className='font-bold text-xl'>Security+ SY0-601</div>
-            <div className='text-lg mb-2 ml-3'>launched Nov 2020</div>
+            <div className='text-md mb-2 ml-3'>launched Nov 2020</div>
             <div><img src={SecurityImage} alt="Security+ 006" className='w-32 ml-7' /></div>
           </div> 
         </div>
@@ -149,9 +149,9 @@ function App() {
       securityTrigger % 2 !== 0 
       ? 
       <>
-        <form className='flex justify-center mt-6'>
+        <form className='flex justify-center mt-12 mb-8'>
           <select className='text-lg' onChange={(e) => setFlashcards(e.target.value)}>
-            <option>Select Security+ Lesson to Review</option>
+            <option>SECURITY+ Lesson to Review:</option>
             {/* <option value="ports">Ports</option> */}
             <option value="one">Lesson 1 - Comparing Security Roles and Security Controls</option>
             <option value="two">Lesson 2 - Explaining Threat Actors and Threat Intelligence</option>
@@ -160,7 +160,7 @@ function App() {
             <option value="five">Lesson 5 - Summarizing Basic Cryptographic Concepts</option>
             <option value="six">Lesson 6 - Implementing Public Key Infrastructure</option>
             <option value="seven">Lesson 7 - Implementing Authentication Controls</option>
-            <option value="eight">Lesson 8 - Implementing Identity and Account Management Controls</option>
+            <option value="eight">Lesson 8 - Implementing Identity and Account Mgmt Controls</option>
             <option value="nine">Lesson 9 - Implementing Secure Network Designs</option>
             <option value="ten">Lesson 10 - Implementing Network Security Appliances</option>
             <option value="eleven">Lesson 11 - Implementing Secure Network Protocols</option>
@@ -188,9 +188,9 @@ function App() {
       networkTrigger % 2 !== 0
       ? 
       <>
-        <form className='flex justify-center my-6'>
+        <form className='flex justify-center mt-12 mb-8'>
           <select className='text-lg' onChange={(e) => setNetFlashcards(e.target.value)}>
-            <option>Select Network+ Lesson to Review</option>
+            <option>NETWORK+ Lesson to Review</option>
             <option value="ports">Ports</option>
             <option value="one_net">Lesson 1 - OSI Model</option>
             <option value="two_net">Lesson 2 - Ethernet Cabling</option>
@@ -216,7 +216,7 @@ function App() {
       
       
 
-      <div className='text-sm flex justify-center mt-16'>
+      <div className='text-sm flex justify-center mt-16 mb-6'>
         2022 React App by Adam Taylor Smith
       </div>
     </>
