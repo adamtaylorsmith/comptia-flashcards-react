@@ -98,16 +98,20 @@ function App() {
     // 'nineteen_net': <LessonNineteenX flashcards={nineteen} />,
     // 'twenty_net': <LessonTwentyX flashcards={twenty} />,
   }
-  const touchdown = () => {
-    alert('hi')
-  }
+
   const [networkTrigger, setNetworkTrigger] = useState(0)
   const networkPlus = () => {
     setNetworkTrigger(networkTrigger + 1)
+    if (securityTrigger % 2 !== 0 ) {
+      setSecurityTrigger(securityTrigger + 1)
+    }
   }
   const [securityTrigger, setSecurityTrigger] = useState(0)
   const securityPlus = () => {
     setSecurityTrigger(securityTrigger + 1)
+    if (networkTrigger % 2 !== 0) {
+      setNetworkTrigger(networkTrigger + 1)
+    }
   }
 
   const newFunc = () => {
@@ -122,11 +126,16 @@ function App() {
       <div className='flex justify-center text-3xl font-bold mt-2'>
       Exam Prep Flashcards
       </div>
+      <div className='flex justify-center text-xl mt-12 lg:mx-40 xl:mx-80'>
+      <span className='font-bold'>CompTIA</span>&nbsp;(Computing Technology Industry Association)
+      </div>
+      <div className='flex justify-center text-lg lg:mx-48 xl:mx-80'>is a non-profit trade association that issues vendor-neutral professional certifications for the information technology industry. 
+      </div>
       <div className='flex justify-center text-lg mt-12'>
-        Choose:
+        Choose your flashcards:
       </div>
 
-      <div className='flex justify-around mt-3'>
+      <div className='flex justify-around mt-10'>
 
         <div onClick={() => networkPlus()} className='flex-col border-solid border-2 border-black  rounded-lg hover:border-white hover:shadow-2xl lg:ml-28 xl:ml-56' style={ networkTrigger % 2 !== 0  ? {'backgroundColor': '#1e1e1e', 'color': '#faf7f7'} : {'backgroundColor': 'white'} }>
           <div className='p-8'>
@@ -151,7 +160,7 @@ function App() {
       <>
         <form className='flex justify-center mt-12 mb-8'>
           <select className='text-lg' onChange={(e) => setFlashcards(e.target.value)}>
-            <option>SECURITY+ Lesson to Review:</option>
+            <option value="empty">SECURITY+ Lesson to Review:</option>
             {/* <option value="ports">Ports</option> */}
             <option value="one">Lesson 1 - Comparing Security Roles and Security Controls</option>
             <option value="two">Lesson 2 - Explaining Threat Actors and Threat Intelligence</option>
@@ -190,7 +199,7 @@ function App() {
       <>
         <form className='flex justify-center mt-12 mb-8'>
           <select className='text-lg' onChange={(e) => setNetFlashcards(e.target.value)}>
-            <option>NETWORK+ Lesson to Review</option>
+            <option value="empty">NETWORK+ Lesson to Review</option>
             <option value="ports">Ports</option>
             <option value="one_net">Lesson 1 - OSI Model</option>
             <option value="two_net">Lesson 2 - Ethernet Cabling</option>
@@ -216,8 +225,8 @@ function App() {
       
       
 
-      <div className='text-sm flex justify-center mt-16 mb-6'>
-        2022 React App by Adam Taylor Smith
+      <div className='text-sm flex justify-center mt-24 mb-6'>
+        React / Tailwind App 2022 by Adam Taylor Smith
       </div>
     </>
   );
