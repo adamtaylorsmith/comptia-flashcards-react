@@ -104,6 +104,7 @@ function App() {
     setNetworkTrigger(networkTrigger + 1)
     if (securityTrigger % 2 !== 0 ) {
       setSecurityTrigger(securityTrigger + 1)
+      setFlashcards('empty')
     }
   }
   const [securityTrigger, setSecurityTrigger] = useState(0)
@@ -111,11 +112,8 @@ function App() {
     setSecurityTrigger(securityTrigger + 1)
     if (networkTrigger % 2 !== 0) {
       setNetworkTrigger(networkTrigger + 1)
+      setNetFlashcards('empty')
     }
-  }
-
-  const newFunc = () => {
-    console.log('hi')
   }
 
   return (
@@ -137,18 +135,19 @@ function App() {
 
       <div className='flex justify-around mt-10'>
 
-        <div onClick={() => networkPlus()} className='flex-col border-solid border-2 border-black rounded-lg hover:border-white hover:shadow-2xl lg:ml-28 xl:ml-56' style={ networkTrigger % 2 !== 0  ? {'backgroundColor': '#1e1e1e', 'color': '#faf7f7'} : {'backgroundColor': '#d4d4d4', 'color': 'black'} }>
-          <div className='p-8'>
-            <div className='font-bold text-xl'>Network+ N10-008</div>
-            <div className='text-md mb-4 ml-3'>launched Sept 2021</div>
-            <div><img src={NetworkImage} alt="Network+ 008" className='w-32 ml-7 mt-2' /></div>
-          </div> 
-        </div>
+        
         <div onClick={() => securityPlus()} className='flex-col border-solid border-2 border-black rounded-lg hover:border-white hover:shadow-2xl lg:mr-28 xl:mr-56' style={ securityTrigger % 2 !== 0  ? {'backgroundColor': '#1e1e1e', 'color': '#faf7f7'} : {'backgroundColor': '#d4d4d4', 'color': 'black'} }>
           <div className='p-8'>
             <div className='font-bold text-xl'>Security+ SY0-601</div>
             <div className='text-md mb-2 ml-3'>launched Nov 2020</div>
             <div><img src={SecurityImage} alt="Security+ 006" className='w-32 ml-7 mt-4' /></div>
+          </div> 
+        </div>
+        <div onClick={() => networkPlus()} className='flex-col border-solid border-2 border-black rounded-lg hover:border-white hover:shadow-2xl lg:ml-28 xl:ml-56' style={ networkTrigger % 2 !== 0  ? {'backgroundColor': '#1e1e1e', 'color': '#faf7f7'} : {'backgroundColor': '#d4d4d4', 'color': 'black'} }>
+          <div className='p-8'>
+            <div className='font-bold text-xl'>Network+ N10-008</div>
+            <div className='text-md mb-4 ml-3'>launched Sept 2021</div>
+            <div><img src={NetworkImage} alt="Network+ 008" className='w-32 ml-7 mt-2' /></div>
           </div> 
         </div>
 
@@ -188,9 +187,7 @@ function App() {
         {myComponents[flashcards]}
       </>
       : 
-        // {myComponents('empty')}
-        newFunc()
-        // ''
+      ''
       }
 
       {
@@ -232,9 +229,9 @@ function App() {
   );
 }
 
-const empty = [
-  // '':'',
-]
+// const empty = [
+//   '':'',
+// ]
 const one = [
   {
     id: 1.00,
