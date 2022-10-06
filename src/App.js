@@ -136,14 +136,14 @@ function App() {
       <div className='flex justify-around mt-10'>
 
         
-        <div onClick={() => securityPlus()} className='flex-col border-solid border-2 border-black rounded-lg hover:border-white hover:shadow-2xl lg:mr-28 xl:mr-56' style={ securityTrigger % 2 !== 0  ? {'backgroundColor': '#1e1e1e', 'color': '#faf7f7'} : {'backgroundColor': '#d4d4d4', 'color': 'black'} }>
+        <div onClick={() => securityPlus()} className='flex-col border-solid border-2 border-black rounded-lg hover:border-white hover:shadow-2xl lg:ml-28 xl:ml-56' style={ securityTrigger % 2 !== 0  ? {'backgroundColor': '#1e1e1e', 'color': '#faf7f7'} : {'backgroundColor': '#d4d4d4', 'color': 'black'} }>
           <div className='p-8'>
             <div className='font-bold text-xl'>Security+ SY0-601</div>
             <div className='text-md mb-2 ml-3'>launched Nov 2020</div>
             <div><img src={SecurityImage} alt="Security+ 006" className='w-32 ml-7 mt-4' /></div>
           </div> 
         </div>
-        <div onClick={() => networkPlus()} className='flex-col border-solid border-2 border-black rounded-lg hover:border-white hover:shadow-2xl lg:ml-28 xl:ml-56' style={ networkTrigger % 2 !== 0  ? {'backgroundColor': '#1e1e1e', 'color': '#faf7f7'} : {'backgroundColor': '#d4d4d4', 'color': 'black'} }>
+        <div onClick={() => networkPlus()} className='flex-col border-solid border-2 border-black rounded-lg hover:border-white hover:shadow-2xl lg:mr-28 xl:mr-56' style={ networkTrigger % 2 !== 0  ? {'backgroundColor': '#1e1e1e', 'color': '#faf7f7'} : {'backgroundColor': '#d4d4d4', 'color': 'black'} }>
           <div className='p-8'>
             <div className='font-bold text-xl'>Network+ N10-008</div>
             <div className='text-md mb-4 ml-3'>launched Sept 2021</div>
