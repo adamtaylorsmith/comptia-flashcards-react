@@ -4437,7 +4437,7 @@ const eighteen = [
   {
     id: 18.13,
     question: 'Crash Dump',
-    answer: 'When Windows encounters an unrecoverable kernel error, it can write contents of memory to a dump file at C:\Windows\MEMORY.DMP, Minidumps are in C:\Windows\Minidumps',
+    answer: 'When Windows encounters an unrecoverable kernel error, it can write contents of memory to a dump file at Windows_MEMORY.DMP, Minidumps are in Windows_Minidumps',
   },
   {
     id: 18.14,
