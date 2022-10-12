@@ -1,1 +1,1 @@
-I searched the web for CompTIA flashcards but they either lacked substance or were behind a paywall. So I built my own!! Developed with React and Tailwind.
+I searched the web for CompTIA flashcards but what i found either lacked substance or were behind a paywall, so I built my own!! Developed with React.js and TailwindCSS.

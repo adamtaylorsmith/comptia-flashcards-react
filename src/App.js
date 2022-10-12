@@ -104,7 +104,8 @@ function App() {
     setNetworkTrigger(networkTrigger + 1)
     if (securityTrigger % 2 !== 0 ) {
       setSecurityTrigger(securityTrigger + 1)
-      setFlashcards('empty')
+      setFlashcards('')
+      myComponents('empty')
     }
   }
   const [securityTrigger, setSecurityTrigger] = useState(0)
@@ -112,7 +113,8 @@ function App() {
     setSecurityTrigger(securityTrigger + 1)
     if (networkTrigger % 2 !== 0) {
       setNetworkTrigger(networkTrigger + 1)
-      setNetFlashcards('empty')
+      setNetFlashcards('')
+      myNetComponents('empty')
     }
   }
 
@@ -130,7 +132,7 @@ function App() {
       <div className='flex justify-center text-lg mx-16 md:mx-28 lg:mx-48 xl:mx-80'>is a non-profit trade association that issues vendor-neutral professional certifications for the information technology industry. 
       </div>
       <div className='flex justify-center text-lg mt-12'>
-        Choose your flashcards:
+        Choose your exam flashcards:
       </div>
 
       <div className='flex justify-around mt-10'>
@@ -157,7 +159,7 @@ function App() {
       securityTrigger % 2 !== 0 
       ? 
       <>
-        <form className='flex justify-center mt-12 mb-8'>
+        <form className='flex justify-center mt-12'>
           <select className='text-gray-800 text-lg' onChange={(e) => setFlashcards(e.target.value)}>
             <option value="empty">SECURITY+ Lesson to Review:</option>
             {/* <option value="ports">Ports</option> */}
@@ -194,7 +196,7 @@ function App() {
       networkTrigger % 2 !== 0
       ? 
       <>
-        <form className='flex justify-center mt-12 mb-8'>
+        <form className='flex justify-center mt-12'>
           <select className='text-gray-800 text-lg' onChange={(e) => setNetFlashcards(e.target.value)}>
             <option value="empty">NETWORK+ Lesson to Review</option>
             <option value="ports">Ports</option>
@@ -219,10 +221,8 @@ function App() {
       ''
       }
       
-      
-      
 
-      <div className='text-sm flex justify-center mt-24 mb-6'>
+      <div className='text-sm flex justify-center mt-28 mb-6'>
         React / Tailwind App 2022 by Adam Taylor Smith
       </div>
     </>
