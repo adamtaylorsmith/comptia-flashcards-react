@@ -35,13 +35,13 @@ import LessonTenX from './net_components/LessonTen'
 import LessonElevenX from './net_components/LessonEleven'
 import LessonTwelveX from './net_components/LessonTwelve'
 import LessonThirteenX from './net_components/LessonThirteen'
-// import LessonFourteenX from './net_components/LessonFourteen'
-// import LessonFifteenX from './net_components/LessonFifteen'
-// import LessonSixteenX from './net_components/LessonSixteen'
-// import LessonSeventeenX from './net_components/LessonSeventeen'
-// import LessonEighteenX from './net_components/LessonEighteen'
-// import LessonNineteenX from './net_components/LessonNineteen'
-// import LessonTwentyX from './net_components/LessonTwenty'
+import LessonFourteenX from './net_components/LessonFourteen'
+import LessonFifteenX from './net_components/LessonFifteen'
+import LessonSixteenX from './net_components/LessonSixteen'
+import LessonSeventeenX from './net_components/LessonSeventeen'
+import LessonEighteenX from './net_components/LessonEighteen'
+import LessonNineteenX from './net_components/LessonNineteen'
+import LessonTwentyX from './net_components/LessonTwenty'
 import NetworkImage from './img/netplus.png'
 import SecurityImage from './img/secplus.png'
 
@@ -90,13 +90,13 @@ function App() {
     'eleven_net': <LessonElevenX flashcards={net_eleven} />,
     'twelve_net': <LessonTwelveX flashcards={net_twelve} />,
     'thirteen_net': <LessonThirteenX flashcards={net_thirteen} />,
-    // 'fourteen_net': <LessonFourteenX flashcards={fourteen} />,
-    // 'fifteen_net': <LessonFifteenX flashcards={fifteen} />,
-    // 'sixteen_net': <LessonSixteenX flashcards={sixteen} />,
-    // 'seventeen_net': <LessonSeventeenX flashcards={seventeen} />,
-    // 'eighteen_net': <LessonEighteenX flashcards={eighteen} />,
-    // 'nineteen_net': <LessonNineteenX flashcards={nineteen} />,
-    // 'twenty_net': <LessonTwentyX flashcards={twenty} />,
+    'fourteen_net': <LessonFourteenX flashcards={net_fourteen} />,
+    'fifteen_net': <LessonFifteenX flashcards={net_fifteen} />,
+    'sixteen_net': <LessonSixteenX flashcards={net_sixteen} />,
+    'seventeen_net': <LessonSeventeenX flashcards={net_seventeen} />,
+    'eighteen_net': <LessonEighteenX flashcards={net_eighteen} />,
+    'nineteen_net': <LessonNineteenX flashcards={net_nineteen} />,
+    'twenty_net': <LessonTwentyX flashcards={net_twenty} />,
   }
 
   const [networkTrigger, setNetworkTrigger] = useState(0)
@@ -213,6 +213,13 @@ function App() {
             <option value="eleven_net">Lesson 11 - Network Applications</option>
             <option value="twelve_net">Lesson 12 - Network Availability</option>
             <option value="thirteen_net">Lesson 13 - Common Security Concepts</option>
+            <option value="fourteen_net">Lesson 14 - Secure Networks</option>
+            <option value="fourteen_net">Lesson 15 - Wireless Networks</option>
+            <option value="fourteen_net">Lesson 16 - WAN and Remote Access Methods</option>
+            <option value="fourteen_net">Lesson 17 - Organizational and Physical Security Concepts</option>
+            <option value="fourteen_net">Lesson 18 - Disaster Recovery and High Availability</option>
+            <option value="fourteen_net">Lesson 19 - Network Hardening Techniques</option>
+            <option value="fourteen_net">Lesson 20 - Cloud and Data Architecture</option>
           </select>
         </form>
         {myNetComponents[netFlashcards]}
@@ -229,9 +236,6 @@ function App() {
   );
 }
 
-// const empty = [
-//   '':'',
-// ]
 const one = [
   {
     id: 1.00,
@@ -6536,7 +6540,7 @@ const net_nine = [
   {
     id: 9.41,
     question: 'Nmap',
-    answer: '',
+    answer: 'Pentesting tool...',
   },
   {
     id: 9.42,
@@ -6706,11 +6710,549 @@ const net_twelve = [
     id: 12.00,
     question: 'LESSON 12 - Network Availability',
   },
+  {
+    id: 12.01,
+    question: 'Availability',
+    answer: 'Up and operational. Is my data available when I want it?',
+  },
+  {
+    id: 12.02,
+    question: 'Reliability',
+    answer: 'Not dropping packets',
+  },
+  {
+    id: 12.03,
+    question: 'MTTR',
+    answer: 'Mean Time to Repair. The average time it takes to repair a device when it breaks.',
+  },
+  {
+    id: 12.04,
+    question: 'MTBF',
+    answer: 'Mean Time Between Failures. Avrage time between failures of a device.',
+  },
+  {
+    id: 12.05,
+    question: 'HSRP',
+    answer: 'Hot Standby Router Protocol. Cisco proprietary first-hop redundancy. Allows for active and standby routers.',
+  },
+  {
+    id: 12.06,
+    question: 'CARP',
+    answer: 'Common Address Redundancy Protocol. Open-standard variant of CARP. Allows for active and standby routers.',
+  },
+  {
+    id: 12.07,
+    question: 'VRRP',
+    answer: 'Virtual Router Redundancy Protocol. IETP open-standard variant of HSRP.',
+  },
+  {
+    id: 12.08,
+    question: 'GLBP',
+    answer: 'Gateway Load Balancing Protocol. Proprietary Cisco first-hop focuses on load balancing over redundancy.',
+  },
+  {
+    id: 12.09,
+    question: 'LACP',
+    answer: 'Link Aggregation Control Protocol. Redundancy by having multiple links between devices',
+  },
+  {
+    id: 12.10,
+    question: 'Availability Best Practices',
+    answer: 'Examine technical goals / Identify budget / Categorize business apps into levels of availablility / Establish performance standards / Define how to manage and measure the solution.',
+  },
+  {
+    id: 12.11,
+    question: 'Recovery Sites: Cold',
+    answer: 'Building is available but no hardware or software is configured. Slow and time consuming recovery.',
+  },
+  {
+    id: 12.12,
+    question: 'Recovery Sites: Warm',
+    answer: 'Building and equipment available, latest data unavailable though. Recovery is fairly quick.',
+  },
+  {
+    id: 12.13,
+    question: 'Recovery Sites: Hot',
+    answer: 'Ready to go. Downtime is nil.',
+  },
 ]
 const net_thirteen = [
   {
     id: 13.00,
-    question: 'LESSON 13 - Common Security Concepts ',
+    question: 'LESSON 13 - Common Security Concepts',
+  },
+  {
+    id: 13.01,
+    question: 'Quest',
+    answer: 'Answer',
+  },
+]
+const net_fourteen = [
+  {
+    id: 14.00,
+    question: 'LESSON 14 - Secure Networks',
+  },
+  {
+    id: 14.01,
+    question: 'Stateful Firewall',
+    answer: 'Inspects traffic as a part of a session & recognizes where the traffic originated.',
+  },
+  {
+    id: 14.02,
+    question: 'NGFW',
+    answer: 'Next Generation Firewall.Conducts deep packet inspection & packet filtering.',
+  },
+  {
+    id: 14.03,
+    question: 'ACL',
+    answer: 'Access Control List. A set of rules applied to router interfaces that permit / deny traffic - IP / MAC',
+  },
+  {
+    id: 14.04,
+    question: 'NIDS / NIPS and HIDS / HIPS',
+    answer: 'NIDS / NIPS Network-Based: A network device protects the network HIDS / HIPS Host-Based: Software-based & installed on servers / clients. Can work together!',
+  },
+  {
+    id: 14.05,
+    question: 'RDG',
+    answer: 'Remote Desktop Gateway. Provides a secure connection using SSL/TLS protocols to the server via RDP. Encrypted. Control access to network resources based on permissions/group roles.',
+  },
+  {
+    id: 14.06,
+    question: 'VNC',
+    answer: 'Virtual Network Computing: port 5900. Designed for thin clients e.g. VDI.',
+  },
+  {
+    id: 14.07,
+    question: 'In-Band Management',
+    answer: 'Managing devices using Telnet / SSH protocols over the network.',
+  },
+  {
+    id: 14.08,
+    question: 'VPN',
+    answer: 'Extends a private network across public networks.',
+  },
+  {
+    id: 14.09,
+    question: 'Full Tunnel VPN',
+    answer: 'Routes & encrypts all network requests through the VPN connection back to the headquarters.',
+  },
+  {
+    id: 14.10,
+    question: 'Split Tunnel VPN',
+    answer: 'Routes & encrypts only the traffic bound for the headquarters over the VPN, & sends the rest of the traffic to the regular internet. Better performance but less secure',
+  },
+  {
+    id: 14.11,
+    question: 'Clientless VPN',
+    answer: 'Creates a secure, remote-access VPN tunnel using a web browser without requiring a software / hardware client.',
+  },
+  {
+    id: 14.12,
+    question: 'SSL',
+    answer: 'Secure Socket Layer. Provides cryptography/reliability using the upper OSI layers 5 / 6 / 7.',
+  },
+  {
+    id: 14.13,
+    question: 'TLS',
+    answer: 'Transport Layer Security. Provides secure web browsing over HTTPS SSL / TLS use TCP to establish secure client / server connections.',
+  },
+  {
+    id: 14.14,
+    question: 'DTLS',
+    answer: 'Datagram Transport Layer Security. UDP-based version of the TLS protocol, operates faster due to less overhead.',
+  },
+  {
+    id: 14.15,
+    question: 'L2TP',
+    answer: 'Layer 2 Tunneling Protocol. Lacks encryption by default.',
+  },
+  {
+    id: 14.16,
+    question: 'PPTP',
+    answer: 'Answer',
+  },
+  {
+    id: 14.16,
+    question: 'SNMP',
+    answer: 'Answer',
+  },
+  {
+    id: 14.16,
+    question: 'Syslog',
+    answer: 'Answer',
+  },
+  {
+    id: 14.16,
+    question: 'SIEM',
+    answer: 'Answer',
+  },
+]
+const net_fifteen = [
+  {
+    id: 15.00,
+    question: 'LESSON 15 - Wireless Networks',
+  },
+  {
+    id: 15.01,
+    question: 'Wireless Access Point', 
+    answer: 'Expands wired LAN into wireless domain. Connects wired LAN and wireless devices into same subnet. All clients on access point are on single collision domain.',
+  },
+  {
+    id: 15.02,
+    question: 'IBSS', 
+    answer: 'Independent Basic Service Set. Only devices / clients with no AP',
+  },
+  {
+    id: 15.03,
+    question: 'BSS', 
+    answer: 'Basic Service Set. Only one AP connected to network. (SOHO)',
+  },
+  {
+    id: 15.04,
+    question: 'ESS', 
+    answer: 'Extended Service Set. Contains multiple APs to provide coverage. (Campus)',
+  },
+  {
+    id: 15.05,
+    question: 'Mesh Topology', 
+    answer: 'May not use centralized control. A range of wireless',
+  },
+  {
+    id: 15.06,
+    question: 'Site Survey', 
+    answer: 'Wireless survey to determine coverage areas',
+  },
+  {
+    id: 15.07,
+    question: 'Wireless Range Extenders', 
+    answer: 'Overcomes distance limitations of wireless networks. Amplifies the signal and extends reachability',
+  },
+  {
+    id: 15.08,
+    question: 'RFI', 
+    answer: 'Radio Frequency Interference. Caused by using similar frequencies to WLAN. (e.g. baby monitor, microwave over, wireless security system)',
+  },
+  {
+    id: 15.09,
+    question: 'CSMA/CA', 
+    answer: 'Carrier Sense Multiple Access / Collision Avoidance. Listens for transmission to determine if safe to transmit',
+  },
+  {
+    id: 15.10,
+    question: 'Pre-Shared Key', 
+    answer: 'AP and client use the same encryption key. Key can be compromised.',
+  },
+  {
+    id: 15.11,
+    question: 'WEP', 
+    answer: 'Wired Equivalent Privacy. Original 802.11 security standard. Pre-shared key. 40-bit to 64-bit to 128-bit upgrades over time.',
+  },
+  {
+    id: 15.12,
+    question: 'WPA', 
+    answer: 'Wi-Fi Protected Access. TKIP 48-bit IV, RC4 encryption',
+  },
+  {
+    id: 15.13,
+    question: 'WPA2', 
+    answer: '802.11i security standard, stronger encryption and integrity. CCMP AES 128-bit encryption',
+  },
+  {
+    id: 15.14,
+    question: 'Captive Portal', 
+    answer: 'Web page that appears before user can access network resources.',
+  },
+  {
+    id: 15.15,
+    question: 'Geofencing', 
+    answer: '',
+  },
+  {
+    id: 15.16,
+    question: 'War Driving', 
+    answer: '',
+  },
+  
+]
+const net_sixteen = [
+  {
+    id: 16.00,
+    question: 'LESSON 16 - WAN and Remote Access Methods',
+  },
+  {
+    id: 16.01,
+    question: 'Circuit-Switched Connection', 
+    answer: 'Only connected when needed (e.g. a phone call). On-demand bandwidth.',
+  },
+  {
+    id: 16.02,
+    question: 'Packet-Switched Connection', 
+    answer: 'Always on, dedicated leased line.',
+  },
+  {
+    id: 16.03,
+    question: 'PPP', 
+    answer: 'Point-to-Point Protocol, Common protocol on dedicated leased lines.',
+  },
+  {
+    id: 16.04,
+    question: 'LCP', 
+    answer: 'Link Control Protocol. Multilink interface allows multiple physical connections to be bonded together.',
+  },
+  {
+    id: 16.05,
+    question: 'PAP', 
+    answer: 'Password Authentication Protocol. One way authentication between client / server. Sent in clear text.',
+  },
+  {
+    id: 16.06,
+    question: 'CHAP', 
+    answer: 'Challenge Handshake Authentication Protocol. One way auth using a three way handshake. Credentials hashed before transmission.',
+  },
+  {
+    id: 16.07,
+    question: 'MS_CHAP', 
+    answer: 'Microsoft Challenge Handshake Authentication Protocol. Includes two way auth.',
+  },
+  {
+    id: 16.09,
+    question: 'PPoE', 
+    answer: 'PPP over Ethernet. Common on DSL modems.',
+  },
+  {
+    id: 16.10,
+    question: 'ADSL', 
+    answer: 'Asymmetric Digital Subscriber Line. Max distance: 18,000 ft. Down: 8 mbps. Up: 1.54 mbps.',
+  },
+  {
+    id: 16.11,
+    question: 'SDSL', 
+    answer: 'Symmetric Digital Subscriber Line. Max distance: 12,000 ft. Down: 1.168 mbps. Up: 1.168 mbps.',
+  },
+  {
+    id: 16.12,
+    question: 'VDSL', 
+    answer: 'Very High Bit Rate DSL. MAx distance: 4,000 ft. Down: 52 mbps. Up: 12 mbps.',
+  },
+  {
+    id: 16.13,
+    question: 'Cable Modem', 
+    answer: 'Cable TV infrastructure contains both fiber and coax. Specific ranges are used for down / up data transmission.',
+  },
+  {
+    id: 16.14,
+    question: 'MPLS GSM 1G 2G ..', 
+    answer: 'Answer.',
+  },
+  {
+    id: 16.15,
+    question: 'Title', 
+    answer: 'Answer.',
+  },
+]
+const net_seventeen = [
+  {
+    id: 17.00,
+    question: 'LESSON 17 - Organizational and Physical Security Concepts',
+  },
+]
+const net_eighteen = [
+  {
+    id: 18.00,
+    question: 'LESSON 18 - Disaster Recovery and High Availability',
+  },
+]
+const net_nineteen = [
+  {
+    id: 19.00,
+    question: 'LESSON 19 - Network Hardening Techniques',
+  },
+  {
+    id: 19.01,
+    question: 'Patch Management',
+    answer: 'Planning, testing, implementing, & auditing of software patches.',
+  },
+  {
+    id: 19.02,
+    question: 'Least Functionality',
+    answer: 'Process of configuring a device / server / workstation to only provide essential services required by user.',
+  },
+  {
+    id: 19.03,
+    question: 'Port Security',
+    answer: 'Prevents unauthorized access to a switchport by identifying / limiting the MAC addresses of hosts that are allowed.',
+  },
+  {
+    id: 19.04,
+    question: 'Private VLAN (Port Isolation)',
+    answer: 'A technique where a VLAN contains switchports that are restricted to a single uplink.',
+  },
+  {
+    id: 19.05,
+    question: 'Primary VLAN',
+    answer: 'Forwards frames downstream to all of the secondary VLANs.',
+  },
+  {
+    id: 19.06,
+    question: 'Isolated VLAN',
+    answer: 'Includes switchports that can reach the primary VLAN but not other secondary VLANs.',
+  },
+  {
+    id: 19.07,
+    question: 'Community VLAN',
+    answer: 'Includes switchports that can communicate with each other and the primary VLAN but not other secondary VLANs.',
+  },
+  {
+    id: 19.08,
+    question: 'DAI',
+    answer: 'Dynamic ARP Inspection. Validates the ARP packets in your network. Ensures only valid ARP requests/responses are relayed across network device.',
+  },
+  {
+    id: 19.09,
+    question: 'DHCP Snooping',
+    answer: 'Provides security by inspecting DHCP traffic, filtering untrusted DHCP messages, & building/maintaining a DHCP snooping binding table.',
+  },
+  {
+    id: 19.10,
+    question: 'Untrusted Interface',
+    answer: 'Any interface that is configured to receive messages from outside the network/firewall.',
+  },
+  {
+    id: 19.11,
+    question: 'Trusted Interface',
+    answer: 'Any interface configured to receive messages only from within the network.',
+  },
+  {
+    id: 19.12,
+    question: 'Explicit Deny',
+    answer: 'Answer.',
+  },
+  {
+    id: 19.13,
+    question: 'Implicit Deny',
+    answer: 'Answer.',
+  },
+  {
+    id: 19.14,
+    question: 'Role Based Access',
+    answer: 'Answer.',
+  },
+]
+const net_twenty = [
+  {
+    id: 20.00,
+    question: 'LESSON 20 - Cloud and Data Architecture',
+  },
+  {
+    id: 20.01,
+    question: 'Virtual Servers',
+    answer: 'Multiple virtual instances exist on a single physical server. Multiple Windows & Linux servers running simultaneously.',
+  },
+  {
+    id: 20.02,
+    question: 'Hypervisor',
+    answer: 'Specialized software that enables virtualization to occur. Hypervisor is the software that emulates the physical hardware. Also called a VMM (Virtual Machine Monitor). E.g. VMware, Virtualbox',
+  },
+  {
+    id: 20.03,
+    question: 'SAN',
+    answer: 'Storage Area Network. Specialized LAN designed for data transfer/storage. Transfers data at block level with special protocol.',
+  },
+  {
+    id: 20.04,
+    question: 'SAN: Fibre Channel',
+    answer: 'Special purpose hardware providing 1-16Gbps. FCoE (Fibre Channel over Ethernet). Removes need for specialized hardware. Runs over your Ethernet networks.',
+  },
+  {
+    id: 20.05,
+    question: 'SAN: iSCSI',
+    answer: 'IP Small Computer System Interface. Lower cost, built using Ethernet switches (<10Gbps). Relies on configuration allowing jumbo frames over the network.',
+  },
+  {
+    id: 20.06,
+    question: 'Infiniband (Virtualized Storage)',
+    answer: 'Switched fabric topology for high-performance computing. Very high throughput with very low latency. Direct or switched connection between servers & storage system.',
+  },
+  {
+    id: 20.07,
+    question: 'Virtual Firewalls and Routers',
+    answer: 'To fully virtualize your network, you need a firewall/router. Virtualized firewall/routers provide the same features as their physical counterparts.',
+  },
+  {
+    id: 20.08,
+    question: 'Virtual Switches',
+    answer: 'Overcomes the problem of all virtual servers being on one broadcast domain. Provides QoS & security',
+  },
+  {
+    id: 20.09,
+    question: 'Virtual Desktops',
+    answer: 'User’s desktop computer is run in a browser. Used from web, laptop, tablet, or phone. Easier to secure & upgrade for the admins.',
+  },
+  {
+    id: 20.10,
+    question: 'SDN',
+    answer: 'Software-Defined Network. Provides the admin with an easy-to-use front end to configure physical and virtual devices throughout the network.',
+  },
+  {
+    id: 20.11,
+    question: 'VoIP',
+    answer: 'Voice over IP. Digitizes voice traffic so that it can be treated like other data on the network. Uses SIP (Session Initiation Protocol) to setup, maintain, & tear down calls.',
+  },
+  {
+    id: 20.12,
+    question: 'Virtual PBX & VoIP',
+    answer: 'Exchange & VoIP. Ability to outsource your telephone system. Utilizes VoIP to send all data to provider, then provider connects it to telephone system.',
+  },
+  {
+    id: 20.13,
+    question: 'Public Cloud | Private Cloud | Hybrid Cloud',
+    answer: 'Private: Systems & users only have access with other devices inside of the same private cloud or system. Public: Systems & users interact with devices on public networks, such as the Internet & other clouds. Hybrid: Combination of private/public.',
+  },
+  {
+    id: 20.14,
+    question: 'NaaS',
+    answer: 'Allows outsourcing of a network to a service provider. Hosted off-site at the service provider’s data center & the customer is billed for usage.',
+  },
+  {
+    id: 20.15,
+    question: 'IaaS',
+    answer: 'Infrastructure as a Service. Allows outsourcing of the infrastructure of servers or desktops to a service provider.',
+  },
+  {
+    id: 20.16,
+    question: 'SaaS',
+    answer: 'Software as a Service. User interacts with web-based application. Details of how it works are hidden from users.',
+  },
+  {
+    id: 20.17,
+    question: 'PaaS',
+    answer: 'Platform as a Service. Provides a development platform for companies that are developing applications without the need for infrastructure.',
+  },
+  {
+    id: 20.18,
+    question: 'DaaS',
+    answer: 'Desktop as a Service. Provides a desktop environment that is accessible through the internet in the form of a cloud desktop or virtual desktop environment.',
+  },
+  {
+    id: 20.19,
+    question: 'Elasticity',
+    answer: 'Attempts to match the resources allocated with the actual amount of resources needed at any given point in time.',
+  },
+  {
+    id: 20.20,
+    question: 'Scalability',
+    answer: 'Answer.',
+  },
+  {
+    id: 20.21,
+    question: 'Vertical Scaling',
+    answer: 'Answer.',
+  },
+  {
+    id: 20.22,
+    question: 'Horizontal Scaling',
+    answer: 'Answer.',
   },
 ]
 
