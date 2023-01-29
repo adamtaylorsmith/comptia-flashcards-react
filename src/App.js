@@ -7056,11 +7056,21 @@ const net_seventeen = [
     id: 17.00,
     question: 'LESSON 17 - Organizational and Physical Security Concepts',
   },
+  {
+    id: 17.01,
+    question: 'Quest',
+    answer: 'Answer',
+  },
 ]
 const net_eighteen = [
   {
     id: 18.00,
     question: 'LESSON 18 - Disaster Recovery and High Availability',
+  },
+  {
+    id: 18.01,
+    question: 'Quest',
+    answer: 'Answer',
   },
 ]
 const net_nineteen = [
