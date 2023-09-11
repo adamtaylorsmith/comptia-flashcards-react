@@ -7,7 +7,7 @@ export default function Flashcard({ flashcard }) {
     return (
         // <div className='mx-2'>
             <div 
-                className={`card ${flip ? 'flip' : ''}`} 
+                className={`card cursor-pointer ${flip ? 'flip' : ''}`} 
                 onClick={() => setFlip(!flip)}
             >
                 {flip ? 
