@@ -159,7 +159,7 @@ function App() {
       securityTrigger % 2 !== 0 
       ? 
       <>
-        <form style={{width: '100px'}} className='mt-12'>
+        <form className='mt-12 flex md:justify-center ml-3 md:ml-0'>
           <select className='text-gray-800 bg-white px-2 py-1 border-solid border-2 border-gray-800' onChange={(e) => setFlashcards(e.target.value)}>
             <option value="empty">SECURITY+ Lesson to Review:</option>
             {/* <option value="ports">Ports</option> */}
@@ -199,7 +199,7 @@ function App() {
         {/* <div className="pl-20 pr-20">
           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
         </div> */}
-        <form className='flex mt-12'>
+        <form className='mt-12 flex md:justify-center ml-3 md:ml-0'>
           <select className='text-gray-800 bg-white px-2 py-1 border-solid border-2 border-gray-800' onChange={(e) => setNetFlashcards(e.target.value)}>
             <option value="empty">NETWORK+ Lesson to Review</option>
             <option value="ports" className="text-sm">Ports</option>
