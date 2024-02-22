@@ -120,16 +120,10 @@ function App() {
 
   return (
     <>
-      <div className='flex justify-center text-xl font-bold mt-12 mx-16 md:mx-28 lg:mx-40 xl:mx-80'>
-      CompTIA Network+ and CompTIA Security+ Exam Prep Flashcards
+      <div className='flex justify-center text-lg font-bold mt-12 mx-8 md:mx-28 lg:mx-40 xl:mx-80'>
+      CompTIA Network+ and CompTIA Security+ Exam Preparation Flashcards
       </div>
-      {/* <div className='flex justify-center text-xl font-bold mx-16 md:mx-28 lg:mx-40 xl:mx-80'>
-      Exam Prep Flashcards
-      </div> */}
-      <div className='flex justify-center text-lg mt-10 mx-16 md:mx-28 lg:mx-40 xl:mx-80 pb-2'>
-        <span className='font-bold'>CompTIA</span>&nbsp;(Computing Technology Industry Association)
-      </div>
-      <div className='flex justify-center text-md mx-16 md:mx-28 lg:mx-48 xl:mx-80'>is a non-profit trade association that issues vendor-neutral professional certifications for the information technology industry. 
+      <div className='flex justify-center text-sm pt-10 mx-8 md:mx-28 lg:mx-48 xl:mx-80'> CompTIA (Computing Technology Industry Association) is a non-profit trade association that issues vendor-neutral professional certifications for the information technology industry. 
       </div>
       <div className='flex justify-center mt-16'>
         Choose your exam flashcards:
@@ -161,7 +155,7 @@ function App() {
       <>
         <form className='mt-12 flex md:justify-center ml-3 md:ml-0'>
           <select className='text-gray-800 bg-white px-2 py-1 border-solid border-2 border-gray-800' onChange={(e) => setFlashcards(e.target.value)}>
-            <option value="empty">SECURITY+ Lesson to Review:</option>
+            <option value="empty">Security+ Lesson to Review:</option>
             {/* <option value="ports">Ports</option> */}
             <option value="one" className="text-sm">Lesson 1 - Comparing Security Roles and Security Controls</option>
             <option value="two" className="text-sm">Lesson 2 - Explaining Threat Actors and Threat Intelligence</option>
@@ -201,7 +195,7 @@ function App() {
         </div> */}
         <form className='mt-12 flex md:justify-center ml-3 md:ml-0'>
           <select className='text-gray-800 bg-white px-2 py-1 border-solid border-2 border-gray-800' onChange={(e) => setNetFlashcards(e.target.value)}>
-            <option value="empty">NETWORK+ Lesson to Review</option>
+            <option value="empty">Network+ Lesson to Review</option>
             <option value="ports" className="text-sm">Ports</option>
             <option value="one_net" className="text-sm">Lesson 1 - OSI Model</option>
             <option value="two_net" className="text-sm">Lesson 2 - Ethernet Cabling</option>
@@ -233,7 +227,7 @@ function App() {
       
 
       <div className='text-sm flex justify-center mt-20 mb-6'>
-        React / Tailwind App 2022 by Adam Taylor Smith
+        React.js & TailwindCSS 2022 by Adam Taylor Smith
       </div>
     </>
   );
